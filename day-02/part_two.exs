@@ -18,7 +18,7 @@ defmodule RockPaperScissors do
   def to_result("X"), do: "LOSE"
   def to_result("Y"), do: "DRAW"
   def to_result("Z"), do: "WIN"
-  
+
   def play_round([a, "DRAW"], acc), do: a + @draw + acc
 
   def play_round([a, "WIN"], acc) do
@@ -34,11 +34,7 @@ defmodule RockPaperScissors do
   end
 
   def losing_play(a) do
-    case a do
-      1 -> 3
-      2 -> 1
-      3 -> 2
-    end
+    rem(a + 1, 3) + 1
   end
 end
 
